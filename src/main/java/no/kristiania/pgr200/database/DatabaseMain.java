@@ -1,11 +1,13 @@
 package no.kristiania.pgr200.database;
 
+import org.flywaydb.core.Flyway;
 import org.postgresql.ds.PGPoolingDataSource;
 
-import javax.swing.plaf.nimbus.State;
-import java.io.IOException;
-import java.sql.*;
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 
@@ -37,6 +39,10 @@ public class DatabaseMain {
         dataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
         dataSource.setUser("gyllenhaal");
         dataSource.setPassword("admin");
+
+        Flyway flyway = new Flyway();
+        flyway.sertDataSource(dataSource);
+        flyway.migrate();
 
         return dataSource;
     }
