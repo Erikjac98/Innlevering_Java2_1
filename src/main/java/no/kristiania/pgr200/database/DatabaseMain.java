@@ -19,7 +19,7 @@ public class DatabaseMain {
         String url = "jdbc:postgresql://localhost:5432/postgres";
 
         String sql = "CREATE TABLE Conference (\n" + "conference_id integer PRIMARY KEY, \n" +
-                "days integer NOT NULL, \n" + "date integer NOT NULL \n" +
+                "days integer NOT NULL, \n" + "date double NOT NULL \n" +
                 ");";
         try (Connection conn = DriverManager.getConnection(url)) {
             try (Statement statement = conn.createStatement()) {
