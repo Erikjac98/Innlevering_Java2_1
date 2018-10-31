@@ -32,6 +32,8 @@ public class DatabaseMain {
 
     public static void main(String[] args){
         createTable();
+        insertInto();
+        selectTable();
     }
 
     public static DataSource createDataSource(){
@@ -41,9 +43,46 @@ public class DatabaseMain {
         dataSource.setPassword("admin");
 
         Flyway flyway = new Flyway();
-        flyway.sertDataSource(dataSource);
+        flyway.setDataSource(dataSource);
         flyway.migrate();
 
         return dataSource;
     }
+
+    public static void insertInto() {
+
+        DataSource dataSource = createDataSource();
+
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+
+        String sql = "INSERT INTO Conference (conference_id, days, date) VALUES (1, 3, 01.06 );";
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            try (Statement statement = conn.createStatement()) {
+                statement.execute(sql);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public static void selectTable(){
+
+        DataSource dataSource = createDataSource();
+
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+
+        String sql = "SELECT Conference_id, days, date \n" + "FROM Conference;";
+
+        try (Connection conn = DriverManager.getConnection(url)) {
+            try (Statement statement = conn.createStatement()) {
+                statement.execute(sql);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
 }
+
