@@ -19,7 +19,7 @@ public class DatabaseMain {
         String url = "jdbc:postgresql://localhost:5432/postgres";
 
         String sql = "CREATE TABLE Conference (\n" + "conference_id integer PRIMARY KEY, \n" +
-                "days integer NOT NULL, \n" + "date double NOT NULL \n" +
+                "days integer NOT NULL, \n" + "date int NOT NULL \n" +
                 ");";
         try (Connection conn = DriverManager.getConnection(url)) {
             try (Statement statement = conn.createStatement()) {
@@ -34,6 +34,7 @@ public class DatabaseMain {
         createTable();
         insertInto();
         selectTable();
+
     }
 
     public static DataSource createDataSource(){
@@ -42,10 +43,13 @@ public class DatabaseMain {
         dataSource.setUser("gyllenhaal");
         dataSource.setPassword("admin");
 
-        Flyway flyway = new Flyway();
+        /*Flyway flyway = new Flyway();
         flyway.setDataSource(dataSource);
+        flyway.setBaselineOnMigrate(true);
+        flyway.setPlaceholderPrefix("%{");
+        flyway.repair();
         flyway.migrate();
-
+        */
         return dataSource;
     }
 
@@ -55,7 +59,7 @@ public class DatabaseMain {
 
         String url = "jdbc:postgresql://localhost:5432/postgres";
 
-        String sql = "INSERT INTO Conference (conference_id, days, date) VALUES (1, 3, 01.06 );";
+        String sql = "INSERT INTO Conference (conference_id, days, date) VALUES (1, 3, 101018 );";
 
         try (Connection conn = DriverManager.getConnection(url)) {
             try (Statement statement = conn.createStatement()) {
