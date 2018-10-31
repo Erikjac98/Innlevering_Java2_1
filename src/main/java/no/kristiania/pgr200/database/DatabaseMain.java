@@ -12,9 +12,10 @@ public class DatabaseMain {
         String sql = "CREATE TABLE Conference (\n" + "conference_id integer PRIMARY KEY, \n" +
                 "days integer NOT NULL, \n" + "date String NOT NULL \n" + "talk_id integer FOREIGN KEY\n" +
                 ");";
-        try (Connection conn = DriverManager.getConnection(url);
-        Statement statement = conn.createStatement()){
-            statement.execute(sql);
+        try (Connection conn = DriverManager.getConnection(url)) {
+            try (Statement statement = conn.createStatement()) {
+                statement.execute(sql);
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
