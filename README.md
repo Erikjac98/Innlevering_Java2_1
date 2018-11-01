@@ -78,7 +78,7 @@ Det er zip-fila som er den offisielle innleveringen, men dere vil få praktisk t
 
 ## Nødvendig verktøy for å kunne kjøre koden
     For å kunne kjøre koden trenger man følgende software:
-
+    
     * Java Runtime Environment 8+ 
     * Valgfri IDE, eks: IntelliJ eller Eclipse
     * Java SDK 10+
@@ -110,10 +110,6 @@ Det er zip-fila som er den offisielle innleveringen, men dere vil få praktisk t
 ## Link til video
     https://youtu.be/pX0RvjA7R2E
 
+## Vurdering av eget resultat
 
-
-
-
-
-
-
+Vi er fornøyde med resultatet til tross for problemer med Flyway. Vi fikk problemer når vi kjørte >mvn flyway:migrate, fikk beskjed om at det ikke eksisterte noen prefix for "flyway". Koden er derfor kommentert ut, men vi fikk i midlertid en suksessfull migrering inn i postgreSQL. Alle tre testene vi har under DatabaseMainTest kjører grønt, men Maven og Travis CI kjører rødt - fikk ikke rettet opp i dette. Koden gjør som beskrevet i oppgavesettet. Programmet kjører standard SQL-handlinger som å opprette en tabell, fylle tabellen med data og vise til innholdet i tabellen. 
