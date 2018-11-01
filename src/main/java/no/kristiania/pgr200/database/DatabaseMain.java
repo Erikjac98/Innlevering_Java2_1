@@ -79,14 +79,15 @@ public class DatabaseMain {
 
         String sql = "SELECT Conference_id, days, date \n" + "FROM Conference;";
 
-        try (Connection conn = DriverManager.getConnection(url)) {
-            try (Statement statement = conn.createStatement()) {
+        try(Connection conn = DriverManager.getConnection(url)) {
+            try(Statement statement = conn.createStatement()){
                 statement.execute(sql);
             }
-        } catch (SQLException e) {
+        } catch (SQLException e){
             System.out.println(e.getMessage());
         }
-
     }
+
+
 }
 
