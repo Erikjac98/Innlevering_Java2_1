@@ -107,6 +107,8 @@ Det er zip-fila som er den offisielle innleveringen, men dere vil få praktisk t
     Ben Nicholay Gyllenhaal Johansen - @TheRealJohnD0e
     Erik Jacobsen - @Erikjac98
 
+## Link til video
+    https://youtu.be/pX0RvjA7R2E
 
 
 
