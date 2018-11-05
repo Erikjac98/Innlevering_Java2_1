@@ -1,4 +1,4 @@
-package no.kristiania.pgr200.database;
+package com.sun.net.httpserver;
 
 public class RootHandler implements HttpHandler {
 
