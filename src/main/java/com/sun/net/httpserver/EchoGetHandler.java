@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
 import java.util.*;
+import java.util.zip.GZIPInputStream;
 
 import static com.sun.net.httpserver.EchoPostHandler.parseQuery;
 

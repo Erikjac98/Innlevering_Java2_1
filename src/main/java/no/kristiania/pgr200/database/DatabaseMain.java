@@ -1,5 +1,4 @@
 package no.kristiania.pgr200.database;
-package com.sun.net.httpserver;
 
 import javax.swing.plaf.nimbus.State;
 import java.io.IOException;
