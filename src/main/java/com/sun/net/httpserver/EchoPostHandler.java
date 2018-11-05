@@ -1,5 +1,9 @@
 package com.sun.net.httpserver;
 
+import java.util.*;
+import java.io.*;
+import java.net.URLDecoder;
+
 public class EchoPostHandler implements HttpHandler {
 
     @Override
