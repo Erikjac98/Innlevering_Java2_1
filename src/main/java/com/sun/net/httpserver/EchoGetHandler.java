@@ -1,5 +1,12 @@
 package com.sun.net.httpserver;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.*;
+
+import static com.sun.net.httpserver.EchoPostHandler.parseQuery;
+
 public class EchoGetHandler implements HttpHandler {
 
     @Override
