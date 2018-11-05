@@ -1,6 +1,5 @@
 package com.sun.net.httpserver;
-
-import java.net.InetSocketAddress;
+package com.sun.net.httpserver;
 
 public class HttpServer {
 

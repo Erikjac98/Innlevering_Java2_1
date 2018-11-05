@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 
 public class DatabaseMain {
+
     public static void createTable(){
 
         String url = "jdbc:postgresql://localhost:5432/postgres";
