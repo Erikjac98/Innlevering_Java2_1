@@ -69,3 +69,47 @@ Dere skal også gi tilbakemelding på en annen gruppes besvarelse. Tilbakemeldin
 4. Det er fint om du legger til veilederne hakonschutt og mudasar187 som collaborators under Settings > Collaborators på github.com, så sparer dere oss for tid.
 
 Det er zip-fila som er den offisielle innleveringen, men dere vil få praktisk tilbakemelding via github.
+
+
+# Avansert Java Innlevering nr. 2
+
+## Hvordan kjøre koden
+    Disse instruksjonenen vil hjelpe deg å kjøre koden lokalt på egen maskin, samt se output i fritt valg av database-software.
+
+## Nødvendig verktøy for å kunne kjøre koden
+    For å kunne kjøre koden trenger man følgende software:
+    
+    * Java Runtime Environment 8+ 
+    * Valgfri IDE, eks: IntelliJ eller Eclipse
+    * Java SDK 10+
+    * Maven 3.x.x
+    * PostgreSQL 9.5
+    * Valgfri database-program, eks: DBeaver eller DataGrip.
+    * Flyway
+    * h2database
+    * Junit 5
+
+## Installering 
+    For å kjøre koden er man nødt til å ha installert alle dependecies nevt ovenfor, deretter er man nødt til å starte postgresql lokalt på maskinen. Dette kan man gjøre via terminalen, eks: >brew services start postgres, og man må endre username og passord i database-programmet til "username: admin" og "password: admin", test gjerne connection før man kjører koden.
+
+## Kjøre tester
+    For å kjøre testene i DatabaseMainTest, trykker man på konfigurasjonsvinduet, og her kan man velge å kjøre hver test for seg selv, eller alle samtidig. For å kjøre testene i maven, åpner man et terminal-vindu, og skriver følgende: >mvn test.
+
+## Prosjektet er bygget med
+    Java:       Valgt programmeringsspråk 
+    Maven:      Test-rammeverk 
+    PostgreSQL: Open-Source database
+
+## Versjonkontroll
+    Vi benyttet GitHub som versjonkontroll. 
+
+## Utviklere
+    Ben Nicholay Gyllenhaal Johansen - @TheRealJohnD0e Feide-id: johaben17
+    Erik Jacobsen - @Erikjac98 Feide-id: jaceri17
+
+## Link til video
+    https://youtu.be/pX0RvjA7R2E
+
+## Vurdering av eget resultat
+
+Vi er fornøyde med resultatet til tross for problemer med Flyway. Vi fikk problemer når vi kjørte >mvn flyway:migrate, fikk beskjed om at det ikke eksisterte noen prefix for "flyway". Koden er derfor kommentert ut, men vi fikk i midlertid en suksessfull migrering inn i postgreSQL. Alle tre testene vi har under DatabaseMainTest kjører grønt, men Maven og Travis CI kjører rødt - fikk ikke rettet opp i dette. Koden gjør som beskrevet i oppgavesettet. Programmet kjører standard SQL-handlinger som å opprette en tabell, fylle tabellen med data og vise til innholdet i tabellen. 
