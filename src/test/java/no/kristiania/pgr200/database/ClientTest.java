@@ -4,18 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DatabaseMainTest {
+class ClientTest {
 
     @Test
-    void createTable() {
-    }
-
-    @Test
-    void addTalk() {
-    }
-
-    @Test
-    void showTalks() {
+    void client() {
     }
 
     @Test
